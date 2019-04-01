@@ -8,7 +8,7 @@ Support for a Monocle EPD platform was requested with [Issue #339](https://githu
 
 ## Licenses
 
-The content of this project is licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/). The animated GIF and video files under the *docs* directory are dual-licensed under the GNU General Public License v3.0 and the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+The content of this project is licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/). The animated GIF and video files under the *docs* directory are dual-licensed under the GNU General Public License v3.0 and the [Creative Commons Attribution-ShareAlike 4.0 International License](https://choosealicense.com/licenses/cc-by-sa-4.0/).
 
 ## Usage
 
@@ -29,7 +29,7 @@ The *move* pattern is displayed by the [MoveAnimation](src/org/status6/epd/javaf
 Variations of the program parameters are shown below. The timing of the image on the left is set to approximate the speed of the animation on an actual e-paper display.
 
 | Pattern | Description |
-|---------|:------------|
+|:-------:|:------------|
 | [![](docs/images/pattern1-a2-wait-200x150.gif)](docs/images/pattern1-a2-wait-800x600.gif) | Pattern 1, waveform mode 4, with wait, at 7.7 fps (130 ms/frame)<br>`java ... -Dmonocle.epd.waveformMode=4 -jar epd-javafx.jar` |
 | [![](docs/images/pattern2-a2-nowait-200x150.gif)](docs/images/pattern2-a2-nowait-800x600.gif) | Pattern 2, waveform mode 4, no wait, at 20 fps (50 ms/frame)<br>`java ... -Dmonocle.epd.waveformMode=4 -Dmonocle.epd.noWait=true -jar epd-javafx.jar --pattern=2` |
 | [![](docs/images/pattern2-auto-level01-200x150.gif)](docs/images/pattern2-auto-level01-800x600.gif) | Pattern 2, auto waveform mode, one gray level, at 4.3 fps (230 ms/frame)<br>`java ... -jar epd-javafx.jar --pattern=2 --levels=1` |
