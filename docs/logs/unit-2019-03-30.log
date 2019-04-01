@@ -1,0 +1,39 @@
+Testsuite: org.status6.epd.javafx.ImageUtilsTest
+openjdk version "12" 2019-03-19
+OpenJDK Runtime Environment (build 12+33)
+OpenJDK 64-Bit Server VM (build 12+33, mixed mode, sharing)
+Linux version 4.15.0-46-generic (amd64)
+1 × 360 frames of 800 × 600 px
+      390 ms (  1.08 ms/frame) ImageUtilsAlt.toFXImage (TYPE_INT_ARGB)
+      390 ms (  1.08 ms/frame) ImageUtils.toFXImage
+      803 ms (  2.23 ms/frame) ImageUtilsAlt.toFXImageArray
+      967 ms (  2.69 ms/frame) ImageUtilsAlt.toFXImageByte (TYPE_4BYTE_ABGR_PRE)
+      990 ms (  2.75 ms/frame) ImageUtilsAlt.toFXImageByte (TYPE_4BYTE_ABGR)
+    1,116 ms (  3.10 ms/frame) ImageUtilsAlt.toFXImage (TYPE_INT_BGR)
+    1,121 ms (  3.11 ms/frame) ImageUtilsAlt.toFXImage (TYPE_INT_RGB)
+    1,222 ms (  3.39 ms/frame) ImageUtilsAlt.toFXImage (TYPE_INT_ARGB_PRE)
+    1,364 ms (  3.79 ms/frame) SwingFXUtils.toFXImage
+    3,578 ms (  9.94 ms/frame) ImageUtilsAlt.toFXImageLoops
+    3,995 ms ( 11.10 ms/frame) ImageUtilsAlt.toFXImageOrdered
+    8,675 ms ( 24.10 ms/frame) ImageUtilsAlt.toFXImageParallel
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.741 sec
+
+Testsuite: org.status6.epd.javafx.ImageUtilsTest
+openjdk version "12-internal" 2019-03-19
+OpenJDK Runtime Environment (build 12-internal+0-adhoc.ubuntu.jdk)
+OpenJDK Client VM (build 12-internal+0-adhoc.ubuntu.jdk, mixed mode)
+Linux version 2.6.35.3-850-gbc67621+ (arm)
+1 × 360 frames of 800 × 600 px
+   11,612 ms ( 32.26 ms/frame) ImageUtils.toFXImage
+   11,733 ms ( 32.59 ms/frame) ImageUtilsAlt.toFXImage (TYPE_INT_ARGB)
+   23,145 ms ( 64.29 ms/frame) ImageUtilsAlt.toFXImageByte (TYPE_4BYTE_ABGR)
+   23,612 ms ( 65.59 ms/frame) ImageUtilsAlt.toFXImageByte (TYPE_4BYTE_ABGR_PRE)
+   26,364 ms ( 73.23 ms/frame) ImageUtilsAlt.toFXImage (TYPE_INT_BGR)
+   26,381 ms ( 73.28 ms/frame) ImageUtilsAlt.toFXImage (TYPE_INT_RGB)
+   31,357 ms ( 87.10 ms/frame) ImageUtilsAlt.toFXImage (TYPE_INT_ARGB_PRE)
+   33,898 ms ( 94.16 ms/frame) SwingFXUtils.toFXImage
+   99,554 ms (276.54 ms/frame) ImageUtilsAlt.toFXImageArray
+  243,965 ms (677.68 ms/frame) ImageUtilsAlt.toFXImageLoops
+  270,260 ms (750.72 ms/frame) ImageUtilsAlt.toFXImageOrdered
+  296,730 ms (824.25 ms/frame) ImageUtilsAlt.toFXImageParallel
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1,119.168 sec
