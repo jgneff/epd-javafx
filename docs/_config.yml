@@ -1,3 +1,2 @@
-theme: jekyll-theme-slate
-title: EPD System Tests
-description: JavaFX system tests for the Monocle EPD platform
+title: EPD JavaFX Tests
+description: System tests for the JavaFX Monocle EPD platform
