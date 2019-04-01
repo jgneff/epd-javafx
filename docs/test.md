@@ -2,7 +2,7 @@
 title: System Tests
 ---
 
-# System Tests
+## System Tests
 
 The video below shows the system tests for the JavaFX Monocle EPD platform running on a Kobo Touch N905C e-reader. The associated [log file](logs/test-2019-03-22.log) contains all of the messages printed during the test with the level `javafx.level = FINER` defined in the logging properties.
 

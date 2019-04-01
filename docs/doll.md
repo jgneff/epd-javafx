@@ -2,7 +2,7 @@
 title: Doll Dancing
 ---
 
-# Doll Dancing
+## Doll Dancing
 
 The video below shows a mechanical doll dancing on a Kobo Touch N905C e-reader. The animation frames are loaded from a bilevel [animated GIF](https://github.com/jgneff/gif-doll) and displayed by the [ImageAnimation](https://github.com/jgneff/epd-javafx/blob/master/src/org/status6/epd/javafx/ImageAnimation.java) JavaFX timer.
 
