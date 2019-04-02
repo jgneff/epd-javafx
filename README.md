@@ -8,7 +8,11 @@ Support for a Monocle EPD platform was requested with [Issue #339](https://githu
 
 ## Licenses
 
-The content of this project is licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/). The animated GIF and video files under the *docs* directory are dual-licensed under the GNU General Public License v3.0 and the [Creative Commons Attribution-ShareAlike 4.0 International License](https://choosealicense.com/licenses/cc-by-sa-4.0/).
+The content of this project is licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/) except for the following:
+
+* The [SwingFXUtils](test/javafx/embed/swing/SwingFXUtils.java) class used by the unit tests is published by Oracle under the [GNU General Public License v2.0](https://choosealicense.com/licenses/gpl-2.0/) with the GNU Classpath Exception. See the [LICENSE](test/javafx/embed/swing/LICENSE) and [ADDITIONAL_LICENSE_INFO](test/javafx/embed/swing/ADDITIONAL_LICENSE_INFO) files for details.
+
+* The video files in the [docs/videos](docs/videos) directory are licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://choosealicense.com/licenses/cc-by-sa-4.0/).
 
 ## Usage
 
@@ -35,7 +39,7 @@ Variations of the program parameters are shown below. The timing of the image on
 | [![](docs/images/pattern2-auto-level01-200x150.gif)](docs/images/pattern2-auto-level01-800x600.gif) | Pattern 2, auto waveform mode, one gray level, at 4.3 fps (230 ms/frame)<br>`java ... -jar epd-javafx.jar --pattern=2 --levels=1` |
 | [![](docs/images/pattern2-auto-level02-200x150.gif)](docs/images/pattern2-auto-level02-800x600.gif) | Pattern 2, auto waveform mode, two gray levels, at 4.8 fps (210 ms/frame)<br>`java ... -jar epd-javafx.jar --pattern=2 --levels=2` |
 | [![](docs/images/pattern2-auto-level04-200x150.gif)](docs/images/pattern2-auto-level04-800x600.gif) | Pattern 2, auto waveform mode, four gray levels, at 1.9 fps (520 ms/frame)<br>`java ... -jar epd-javafx.jar --pattern=2 --levels=4` |
-| [![](docs/images/pattern2-auto-level16-200x150.gif)](docs/images/pattern2-auto-level16-800x600.gif) | Pattern 2, auto waveform mode, 16 gray levels, at 1.9 – 2.2 fps, depending on selected waveform mode (470 – 520 ms/frame)<br>`java ... -jar epd-javafx.jar --pattern=2 --levels=16` |
+| [![](docs/images/pattern2-auto-level16-200x150.gif)](docs/images/pattern2-auto-level16-800x600.gif) | Pattern 2, auto waveform mode, 16 gray levels, at 1.9–2.2 fps (470–520 ms/frame), depending on the waveform mode selected<br>`java ... -jar epd-javafx.jar --pattern=2 --levels=16` |
 
 ## Building
 
