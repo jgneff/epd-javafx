@@ -43,7 +43,7 @@ The program accepts the parameters listed below, specified in the format: `--nam
 * **levels** – the number of gray levels when the pattern is 2 (sweep). There are four levels: 1 (black), 2 (1-bit monochrome), 4 (2-bit grayscale), and 16 (4-bit grayscale). The default is 1 (black).
 * **loops** – The number of animation loops. A value of 0 (zero) means to loop until the application is terminated.
 * **image** – The name of a [bilevel](https://en.wikipedia.org/wiki/Binary_image) and [coalesced](https://imagemagick.org/script/command-line-options.php#coalesce) animated GIF file when the pattern is 3 (image). The default file name is *duke-waving.gif*, bundled with the application. The default file name for the unit tests is *doll-dancing.gif*, found under the test directory. Any other image file must be located in the same directory as the *epd-javafx.jar* file.
-* **patrol** – *true* to cycle back and forth between the first and last frames of the animation, called a *patrol cycle*; otherwise *false* to loop back to the first frame after the last. The default is *false*.
+* **patrol** – The type of loop cycle when the pattern is 3 (image): *true* to cycle back and forth between the first and last frames of the animation, called a *patrol cycle*; otherwise *false* to loop back to the first frame after the last. The default is *false*.
 
 The animation patterns are implemented as subclasses of the JavaFX [AnimationTimer](https://openjfx.io/javadoc/12/javafx.graphics/javafx/animation/AnimationTimer.html) class:
 
