@@ -1,8 +1,8 @@
 ---
-title: JavaFX on E-Paper
+title: Videos
 ---
 
-## JavaFX on E-Paper
+## Videos
 
 The images below link to videos of a [JavaFX application](https://github.com/jgneff/epd-javafx) running on a 2013 Kobo Touch Model N905C e-reader.
 
