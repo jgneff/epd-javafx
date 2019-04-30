@@ -1,2 +1,22 @@
+# Site variables
 title: JavaFX on E-Paper
 description: System tests for the JavaFX Monocle EPD platform
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+
+# Sass/SCSS
+sass:
+  style: :compressed
+
+# GitHub defaults (except theme)
+github: [metadata]
+encoding: "utf-8"
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+future: true
+jailed: false
+gfm_quirks: paragraph_end
