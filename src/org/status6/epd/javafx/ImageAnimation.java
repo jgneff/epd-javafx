@@ -16,10 +16,13 @@
  */
 package org.status6.epd.javafx;
 
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferInt;
 import java.io.IOException;
 import java.util.ArrayList;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.PixelFormat;
 import javafx.scene.image.WritableImage;
 import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
@@ -38,8 +41,14 @@ class ImageAnimation extends FiniteAnimation {
     private final ImageView view;
     private final boolean patrol;
     private final int frames;
-    private final WritableImage jfxImage;
+    private final int width;
+    private final int height;
+    private final BufferedImage tmpImage;
+    private final Graphics2D graphics;
+    private final WritableImage jfxImage1;
+    private final WritableImage jfxImage2;
 
+    private WritableImage jfxImage;
     private boolean reverse;
     private int index;
 
@@ -90,7 +99,35 @@ class ImageAnimation extends FiniteAnimation {
         this.patrol = patrol;
         frames = awtList.size();
         BufferedImage first = awtList.get(0);
-        jfxImage = new WritableImage(first.getWidth(), first.getHeight());
+        width = first.getWidth();
+        height = first.getHeight();
+        for (BufferedImage image : awtList) {
+            if (image.getWidth() != width || image.getHeight() != height) {
+                throw new IllegalArgumentException("GIF image must be a coalesced animation");
+            }
+        }
+
+        /*
+         * The fastest image conversion draws to an AWT image of type
+         * BufferedImage.TYPE_INT_ARGB and writes to a JavaFX image specifying
+         * the pixel format returned by PixelFormat.getIntArgbPreInstance()
+         * (PixelFormat.Type.INT_ARGB_PRE), and seems to work even for images
+         * with translucent transparency. In any case, the pixels in GIF images
+         * are either fully opaque or fully transparent so their colors are the
+         * same when premultiplied with alpha.
+         */
+        tmpImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        graphics = tmpImage.createGraphics();
+
+        /*
+         * Use double buffering on the JavaFX Application Thread to avoid
+         * modifying an image in use by the QuantumRenderer thread; otherwise,
+         * screen tearing is visible when there is enough competition with other
+         * threads in the Java virtual machine.
+         */
+        jfxImage1 = new WritableImage(width, height);
+        jfxImage2 = new WritableImage(width, height);
+        jfxImage = jfxImage1;
     }
 
     /**
@@ -130,7 +167,12 @@ class ImageAnimation extends FiniteAnimation {
 
     @Override
     public void handle(long now) {
-        view.setImage(ImageUtils.toFXImage(awtList.get(index), jfxImage));
+        graphics.drawImage(awtList.get(index), 0, 0, null);
+        int[] data = ((DataBufferInt) tmpImage.getRaster().getDataBuffer()).getData();
+        jfxImage.getPixelWriter().setPixels(0, 0, width, height,
+                PixelFormat.getIntArgbPreInstance(), data, 0, width);
+        view.setImage(jfxImage);
+        jfxImage = jfxImage == jfxImage2 ? jfxImage1 : jfxImage2;
         index = patrol ? nextPatrolCycle() : nextLoopCycle();
     }
 }
