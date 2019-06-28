@@ -18,10 +18,7 @@ The support is added to JavaFX as a new [Monocle](https://wiki.openjdk.java.net/
 
 ## Licenses
 
-The content of this project is licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/) except for the following:
-
-* The [SwingFXUtils](test/javafx/embed/swing/SwingFXUtils.java) class used by the unit tests is published by Oracle under the [GNU General Public License v2.0](https://choosealicense.com/licenses/gpl-2.0/) with the GNU Classpath Exception. See the [LICENSE](test/javafx/embed/swing/LICENSE) and [ADDITIONAL_LICENSE_INFO](test/javafx/embed/swing/ADDITIONAL_LICENSE_INFO) files for details.
-* The video files in the [docs/videos](docs/videos) directory are licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://choosealicense.com/licenses/cc-by-sa-4.0/).
+The content of this project is licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/) except for the video files in the [docs/videos](docs/videos) directory, which are licensed under the Creative Commons [Attribution-ShareAlike 4.0 International](https://choosealicense.com/licenses/cc-by-sa-4.0/) license.
 
 ## Building
 
@@ -29,9 +26,9 @@ The application is a project of the [Apache NetBeans IDE](https://netbeans.apach
 
 * the Java platform is the default (JDK 12 on my system),
 * the source and binary format is JDK 12,
-* a global library named "JavaFX 11" contains the JavaFX 11.0.2 SDK,
-* the JavaFX JAR files are in *${user.home}/lib/javafx-sdk-11.0.2/lib*, and
-* the JavaFX source files in *lib/src.zip* are unzipped into *${user.home}/lib/javafx-sdk-11.0.2/src*.
+* a global library named "JavaFX 12" contains the JavaFX SDK version 12.0.1,
+* the JavaFX JAR files are in *${user.home}/lib/javafx-sdk-12.0.1/lib*, and
+* the JavaFX source files in the archive *lib/src.zip* are unzipped into *${user.home}/lib/javafx-sdk-12.0.1/src*.
 
 ## Usage
 
