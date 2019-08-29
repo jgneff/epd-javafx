@@ -28,10 +28,12 @@ import javafx.scene.paint.Color;
  */
 class MoveAnimation extends FiniteAnimation {
 
-    private static final int BOX_WIDTH = 100;
-    private static final int BOX_HEIGHT = 100;
+    private static final int NUM_BOXES_LONG = 8;
+    private static final int NUM_BOXES_SHORT = 6;
 
     private final GraphicsContext graphics;
+    private final int boxWidth;
+    private final int boxHeight;
     private final int boxesPerWidth;
     private final int boxesPerHeight;
     private final int boxesPerScreen;
@@ -47,8 +49,13 @@ class MoveAnimation extends FiniteAnimation {
      */
     MoveAnimation(Canvas canvas) {
         graphics = canvas.getGraphicsContext2D();
-        boxesPerWidth = (int) canvas.getWidth() / BOX_WIDTH;
-        boxesPerHeight = (int) canvas.getHeight() / BOX_HEIGHT;
+        int width = (int) canvas.getWidth();
+        int height = (int) canvas.getHeight();
+        boolean landscape = width > height;
+        boxWidth = landscape ? width / NUM_BOXES_LONG : width / NUM_BOXES_SHORT;
+        boxHeight = landscape ? height / NUM_BOXES_SHORT : height / NUM_BOXES_LONG;
+        boxesPerWidth = width / boxWidth;
+        boxesPerHeight = height / boxHeight;
         boxesPerScreen = boxesPerWidth * boxesPerHeight;
     }
 
@@ -59,13 +66,13 @@ class MoveAnimation extends FiniteAnimation {
 
     @Override
     public void handle(long now) {
-        double x = (count % boxesPerWidth) * BOX_WIDTH;
-        double y = ((count / boxesPerWidth) % boxesPerHeight) * BOX_HEIGHT;
+        double x = (count % boxesPerWidth) * boxWidth;
+        double y = ((count / boxesPerWidth) % boxesPerHeight) * boxHeight;
         graphics.setFill(Color.BLACK);
-        graphics.fillRect(x, y, BOX_WIDTH, BOX_HEIGHT);
+        graphics.fillRect(x, y, boxWidth, boxHeight);
         if (count > 0) {
             graphics.setFill(Color.WHITE);
-            graphics.fillRect(oldX, oldY, BOX_WIDTH, BOX_HEIGHT);
+            graphics.fillRect(oldX, oldY, boxWidth, boxHeight);
         }
         oldX = x;
         oldY = y;

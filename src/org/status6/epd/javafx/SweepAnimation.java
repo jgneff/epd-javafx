@@ -29,11 +29,13 @@ import javafx.scene.paint.Color;
  */
 class SweepAnimation extends FiniteAnimation {
 
-    private static final int BOX_WIDTH = 100;
-    private static final int BOX_HEIGHT = 100;
+    private static final int NUM_BOXES_LONG = 8;
+    private static final int NUM_BOXES_SHORT = 6;
 
     private final GraphicsContext graphics;
     private final Color[] grays;
+    private final int boxWidth;
+    private final int boxHeight;
     private final int boxesPerWidth;
     private final int boxesPerHeight;
     private final int boxesPerScreen;
@@ -97,8 +99,13 @@ class SweepAnimation extends FiniteAnimation {
     SweepAnimation(Canvas canvas, int levels) {
         graphics = canvas.getGraphicsContext2D();
         grays = getGrays(levels);
-        boxesPerWidth = (int) canvas.getWidth() / BOX_WIDTH;
-        boxesPerHeight = (int) canvas.getHeight() / BOX_HEIGHT;
+        int width = (int) canvas.getWidth();
+        int height = (int) canvas.getHeight();
+        boolean landscape = width > height;
+        boxWidth = landscape ? width / NUM_BOXES_LONG : width / NUM_BOXES_SHORT;
+        boxHeight = landscape ? height / NUM_BOXES_SHORT : height / NUM_BOXES_LONG;
+        boxesPerWidth = width / boxWidth;
+        boxesPerHeight = height / boxHeight;
         boxesPerScreen = boxesPerWidth * boxesPerHeight;
     }
 
@@ -109,11 +116,11 @@ class SweepAnimation extends FiniteAnimation {
 
     @Override
     public void handle(long now) {
-        double x = (count % boxesPerWidth) * BOX_WIDTH;
-        double y = ((count / boxesPerWidth) % boxesPerHeight) * BOX_HEIGHT;
+        double x = (count % boxesPerWidth) * boxWidth;
+        double y = ((count / boxesPerWidth) % boxesPerHeight) * boxHeight;
         boolean even = (count / boxesPerScreen) % 2 == 0;
         graphics.setFill(even ? grays[index] : Color.WHITE);
-        graphics.fillRect(x, y, BOX_WIDTH, BOX_HEIGHT);
+        graphics.fillRect(x, y, boxWidth, boxHeight);
         index = index < grays.length - 1 ? index + 1 : 0;
         count++;
     }
