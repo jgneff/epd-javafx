@@ -3,7 +3,7 @@
 trap exit INT TERM
 set -o errexit
 
-jdk=$HOME/opt/jdk-12
+jdk=$HOME/opt/jdk-13-linux-arm-server-release
 modules=$HOME/lib/armv6hf-sdk/lib
 
 dir=$(dirname $0)
