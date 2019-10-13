@@ -4,7 +4,7 @@ trap exit INT TERM
 set -o errexit
 
 dir=$(dirname $0)
-jdkdir=$HOME/opt/jdk-13-linux-arm-server-release
+jdkdir=$HOME/opt/jdk-13+33
 jfxlib=$HOME/lib/armv6hf-sdk/lib
 epdjar=$dir/../dist/epd-javafx.jar
 
