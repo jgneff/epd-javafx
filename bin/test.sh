@@ -1,17 +1,18 @@
 #!/bin/bash
-# Runs the EPD animation tests.
+# Runs the EPD animation tests
 trap exit INT TERM
 set -o errexit
 
-jdk=$HOME/opt/jdk-13+33
-modules=$HOME/lib/armv6hf-sdk/lib
+# JDK and JavaFX SDK
+JAVA_HOME=$HOME/opt/jdk-13.0.1+9
+JAVAFX_LIB=$HOME/lib/armv6hf-sdk/lib
 
-dir=$(dirname $0)
-argfile=$dir/epdargs.conf
-logfile=$dir/../conf/logging.properties
-jarfile=$dir/../dist/epd-javafx.jar
+rootdir=$HOME/src/epd-javafx
+argfile=$rootdir/bin/epdargs.conf
+jarfile=$rootdir/dist/epd-javafx.jar
+logfile=$rootdir/conf/logging.properties
 
-cmd="$jdk/bin/java --module-path=$modules @$argfile -Djava.util.logging.config.file=$logfile"
+cmd="$JAVA_HOME/bin/java @$argfile --module-path=$JAVAFX_LIB -Djava.util.logging.config.file=$logfile"
 
 printf "\n===> Testing frame buffer color depths in 4-bit grayscale: 8, 16, 32 bpp ...\n"
 for n in 8 16 32; do

@@ -1,15 +1,15 @@
 #!/bin/bash
 # Runs the EPD JavaFX Animator program
-trap exit INT TERM
-set -o errexit
 
-dir=$(dirname $0)
-jdkdir=$HOME/opt/jdk-13+33
-jfxlib=$HOME/lib/armv6hf-sdk/lib
-epdjar=$dir/../dist/epd-javafx.jar
+# JDK and JavaFX SDK
+JAVA_HOME=$HOME/opt/jdk-13.0.1+9
+JAVAFX_LIB=$HOME/lib/armv6hf-sdk/lib
 
-$jdkdir/bin/java --add-modules=javafx.graphics --module-path=$jfxlib \
-    -Djava.util.logging.config.file=$dir/../conf/logging.properties \
-    -Dglass.platform=Monocle -Dmonocle.platform=EPD -Dprism.order=sw \
-    -Dmonocle.input.18/0/0/0.maxX=800 -Dmonocle.input.18/0/0/0.maxY=600 \
-    -Dmonocle.epd.waveformMode=4 -jar $epdjar "$@"
+rootdir=$HOME/src/epd-javafx
+argfile=$rootdir/bin/epdargs.conf
+jarfile=$rootdir/dist/epd-javafx.jar
+logfile=$rootdir/conf/logging.properties
+
+$JAVA_HOME/bin/java @$argfile --module-path=$JAVAFX_LIB \
+    -Djava.util.logging.config.file=$logfile \
+    -Dmonocle.epd.waveformMode=4 -jar $jarfile $@
