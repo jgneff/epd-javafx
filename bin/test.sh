@@ -29,7 +29,7 @@ done
 printf "\n===> Testing frame buffer rotations: 0 (UR), 1 (CW), 2 (UD), 3 (CCW) ...\n"
 for n in 0 1 2 3; do
     printf "===> Rotation: $n ...\n"
-    $cmd @$dir/rotate${n}.conf -Dmonocle.epd.rotate=$n -Dmonocle.epd.waveformMode=4 -jar $jarfile
+    $cmd @$rootdir/bin/rotate${n}.conf -Dmonocle.epd.rotate=$n -Dmonocle.epd.waveformMode=4 -jar $jarfile
 done
 
 printf "\n===> Testing Y8-inverted frame buffer ...\n"
