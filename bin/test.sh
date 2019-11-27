@@ -12,64 +12,73 @@ argfile=$rootdir/bin/epdargs.conf
 jarfile=$rootdir/dist/epd-javafx.jar
 logfile=$rootdir/conf/logging.properties
 
-cmd="$JAVA_HOME/bin/java @$argfile --module-path=$JAVAFX_LIB -Djava.util.logging.config.file=$logfile"
+cmd="$JAVA_HOME/bin/java @$argfile --module-path=$JAVAFX_LIB \
+    -Djava.util.logging.config.file=$logfile"
 
-printf "\n===> Testing frame buffer color depths in 4-bit grayscale: 8, 16, 32 bpp ...\n"
+printf "\n===> 16 gray levels with color depths: 8, 16, 32 bits/px\n"
 for n in 8 16 32; do
-    printf "===> Color depth: $n bpp ...\n"
-    $cmd -Dmonocle.epd.bitsPerPixel=$n -Dmonocle.epd.waveformMode=2 -jar $jarfile --pattern=2 --levels=16
+    printf "===> Color depth: $n bits/px\n"
+    $cmd -Dmonocle.epd.bitsPerPixel=$n -Dmonocle.epd.waveformMode=2 \
+        -jar $jarfile --pattern=2 --levels=16
 done
 
-printf "\n===> Testing frame buffer color depths in 1-bit grayscale: 8, 16, 32 bpp ...\n"
+printf "\n===> Black with color depths: 8, 16, 32 bits/px\n"
 for n in 8 16 32; do
-    printf "===> Color depth: $n bpp ...\n"
-    $cmd -Dmonocle.epd.bitsPerPixel=$n -Dmonocle.epd.waveformMode=4 -jar $jarfile
+    printf "===> Color depth: $n bits/px\n"
+    $cmd -Dmonocle.epd.bitsPerPixel=$n -Dmonocle.epd.waveformMode=4 \
+        -jar $jarfile --pattern=1
 done
 
-printf "\n===> Testing frame buffer rotations: 0 (UR), 1 (CW), 2 (UD), 3 (CCW) ...\n"
+printf "\n===> Rotations: 0 (UR), 1 (CW), 2 (UD), 3 (CCW)\n"
 for n in 0 1 2 3; do
-    printf "===> Rotation: $n ...\n"
-    $cmd @$rootdir/bin/rotate${n}.conf -Dmonocle.epd.rotate=$n -Dmonocle.epd.waveformMode=4 -jar $jarfile
+    printf "===> Rotation: $n\n"
+    $cmd @$rootdir/bin/rotate${n}.conf -Dmonocle.epd.rotate=$n \
+        -Dmonocle.epd.waveformMode=4 -jar $jarfile --pattern=1
 done
 
-printf "\n===> Testing Y8-inverted frame buffer ...\n"
-$cmd -Dmonocle.epd.bitsPerPixel=8 -Dmonocle.epd.y8inverted=true -Dmonocle.epd.waveformMode=4 -jar $jarfile
+printf "\n===> Inverted 8-bit grayscale\n"
+$cmd -Dmonocle.epd.bitsPerPixel=8 -Dmonocle.epd.y8inverted=true \
+    -Dmonocle.epd.waveformMode=4 -jar $jarfile --pattern=1
 
-printf "\n===> Testing no wait with frame buffer color depths: 8, 16, 32 bpp ...\n"
+printf "\n===> No wait with color depths: 8, 16, 32 bits/px\n"
 for n in 8 16 32; do
-    printf "===> Color depth: $n bpp ...\n"
-    $cmd -Dmonocle.epd.noWait=true -Dmonocle.epd.bitsPerPixel=$n -Dmonocle.epd.waveformMode=4 -jar $jarfile --pattern=2
+    printf "===> Color depth: $n bits/px\n"
+    $cmd -Dmonocle.epd.bitsPerPixel=$n -Dmonocle.epd.noWait=true \
+        -Dmonocle.epd.waveformMode=4 -jar $jarfile --pattern=2 --levels=1
 done
 
-printf "\n===> Testing waveform modes in 1-bit grayscale: 4 (A2), 1 (DU), 3 (GC4), 2 (GC16) ...\n"
+printf "\n===> Black with modes: 4 (A2), 1 (DU), 3 (GC4), 2 (GC16)\n"
 for n in 4 1 3 2; do
-    printf "===> Waveform mode: $n ...\n"
-    $cmd -Dmonocle.epd.waveformMode=$n -jar $jarfile
+    printf "===> Waveform mode: $n\n"
+    $cmd -Dmonocle.epd.waveformMode=$n -jar $jarfile --pattern=1
 done
 
-printf "\n===> Testing waveform modes in 4-bit grayscale: 4 (A2), 1 (DU), 3 (GC4), 2 (GC16) ...\n"
+printf "\n===> 16 gray levels with modes: 4 (A2), 1 (DU), 3 (GC4), 2 (GC16)\n"
 for n in 4 1 3 2; do
-    printf "===> Waveform mode: $n ...\n"
+    printf "===> Waveform mode: $n\n"
     $cmd -Dmonocle.epd.waveformMode=$n -jar $jarfile --pattern=2 --levels=16
 done
 
-printf "\n===> Testing automatic waveform mode selection with gray levels: 1, 2, 4, 16 ...\n"
+printf "\n===> Automatic waveform selection with gray levels: 1, 2, 4, 16\n"
 for n in 1 2 4 16; do
-    printf "===> Gray levels: $n ...\n"
+    printf "===> Gray levels: $n\n"
     $cmd -jar $jarfile --pattern=2 --levels=$n
 done
 
-printf "\n===> Testing update flag: enable inversion ...\n"
-$cmd -Dmonocle.epd.enableInversion=true -Dmonocle.epd.waveformMode=4 -jar $jarfile
+printf "\n===> Enable inversion update flag\n"
+$cmd -Dmonocle.epd.waveformMode=4 -Dmonocle.epd.enableInversion=true \
+    -jar $jarfile --pattern=1
 
-printf "\n===> Testing update flag: force monochrome (gray levels 4, 16) ...\n"
+printf "\n===> Force monochrome update flag with gray levels: 4, 16\n"
 for n in 4 16; do
-    printf "===> Gray levels: $n ...\n"
-    $cmd -Dmonocle.epd.forceMonochrome=true -Dmonocle.epd.waveformMode=4 -jar $jarfile --pattern=2 --levels=$n
+    printf "===> Gray level: $n\n"
+    $cmd -Dmonocle.epd.waveformMode=4 -Dmonocle.epd.forceMonochrome=true \
+        -jar $jarfile --pattern=2 --levels=$n
 done
 
-printf "\n===> Testing frame rate (move pattern, with wait): 16 times ...\n"
-$cmd -Dmonocle.epd.waveformMode=4 -jar $jarfile --loops=16
+printf "\n===> Frame rate using move pattern with wait (16 times)\n"
+$cmd -Dmonocle.epd.waveformMode=4 -jar $jarfile --pattern=1 --loops=16
 
-printf "\n===> Testing frame rate (sweep pattern, no wait): 16 times ...\n"
-$cmd -Dmonocle.epd.waveformMode=4 -Dmonocle.epd.noWait=true -jar $jarfile --pattern=2 --loops=16
+printf "\n===> Frame rate using sweep pattern and no wait (16 times)\n"
+$cmd -Dmonocle.epd.noWait=true -Dmonocle.epd.waveformMode=4 \
+    -jar $jarfile --pattern=2 --levels=1 --loops=16
