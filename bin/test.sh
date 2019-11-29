@@ -15,34 +15,37 @@ logfile=$rootdir/conf/logging.properties
 cmd="$JAVA_HOME/bin/java @$argfile --module-path=$JAVAFX_LIB \
     -Djava.util.logging.config.file=$logfile"
 
-printf "\n===> 16 gray levels with color depths: 8, 16, 32 bits/px\n"
+printf "\n===> 16 gray levels with color depths: 8, 16, 32 bpp\n"
 for n in 8 16 32; do
-    printf "===> Color depth: $n bits/px\n"
+    printf "===> Color depth: $n bpp\n"
     $cmd -Dmonocle.epd.bitsPerPixel=$n -Dmonocle.epd.waveformMode=2 \
         -jar $jarfile --pattern=2 --levels=16
 done
 
-printf "\n===> Black with color depths: 8, 16, 32 bits/px\n"
+printf "\n===> Black with color depths: 8, 16, 32 bpp\n"
 for n in 8 16 32; do
-    printf "===> Color depth: $n bits/px\n"
+    printf "===> Color depth: $n bpp\n"
     $cmd -Dmonocle.epd.bitsPerPixel=$n -Dmonocle.epd.waveformMode=4 \
         -jar $jarfile --pattern=1
 done
 
-printf "\n===> Rotations: 0 (UR), 1 (CW), 2 (UD), 3 (CCW)\n"
-for n in 0 1 2 3; do
-    printf "===> Rotation: $n\n"
-    $cmd @$rootdir/bin/rotate${n}.conf -Dmonocle.epd.rotate=$n \
-        -Dmonocle.epd.waveformMode=4 -jar $jarfile --pattern=1
+printf "\n===> Color depths and rotations: 0 (UR), 1 (CW), 2 (UD), 3 (CCW)\n"
+for n in 8 16 32; do
+    for rot in 0 1 2 3; do
+        printf "===> Color depth: $n bpp; Rotation: $rot\n"
+        $cmd @$rootdir/bin/rotate${rot}.conf -Dmonocle.epd.rotate=$rot \
+            -Dmonocle.epd.bitsPerPixel=$n -Dmonocle.epd.waveformMode=4 \
+            -jar $jarfile --pattern=1
+    done
 done
 
 printf "\n===> Inverted 8-bit grayscale\n"
-$cmd -Dmonocle.epd.bitsPerPixel=8 -Dmonocle.epd.y8inverted=true \
+$cmd -Dmonocle.epd.bitsPerPixel=8 -Dmonocle.epd.Y8Inverted=true \
     -Dmonocle.epd.waveformMode=4 -jar $jarfile --pattern=1
 
-printf "\n===> No wait with color depths: 8, 16, 32 bits/px\n"
+printf "\n===> No wait with color depths: 8, 16, 32 bpp\n"
 for n in 8 16 32; do
-    printf "===> Color depth: $n bits/px\n"
+    printf "===> Color depth: $n bpp\n"
     $cmd -Dmonocle.epd.bitsPerPixel=$n -Dmonocle.epd.noWait=true \
         -Dmonocle.epd.waveformMode=4 -jar $jarfile --pattern=2 --levels=1
 done
