@@ -1,0 +1,448 @@
+ubuntu@glohd1:~/src/epd-javafx$ sudo bin/test.sh
+
+===> 16 gray levels with color depths: 8, 16, 32 bpp
+===> Color depth: 8 bpp
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=8, monocle.epd.waveformMode=2}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 8
+FINE: Frame buffer rgba: 8/0,8/0,8/0,0/0
+FINE: Frame buffer grayscale: 1
+FINE: Native screen geometry: 1,472 px x 1,072 px x 8 bpp
+Frame rate: 48 frames in 27.04 s =  1.78 fps (563 ms/frame)
+Frame rate: 48 frames in 26.19 s =  1.83 fps (546 ms/frame)
+Total rate: 97 frames in 53.81 s =  1.80 fps (555 ms/frame)
+===> Color depth: 16 bpp
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=16, monocle.epd.waveformMode=2}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 16
+FINE: Frame buffer rgba: 5/11,6/5,5/0,0/0
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 16 bpp
+Frame rate: 48 frames in 26.88 s =  1.79 fps (560 ms/frame)
+Frame rate: 48 frames in 26.06 s =  1.84 fps (543 ms/frame)
+Total rate: 97 frames in 53.51 s =  1.81 fps (552 ms/frame)
+===> Color depth: 32 bpp
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=32, monocle.epd.waveformMode=2}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in 25.33 s =  1.89 fps (528 ms/frame)
+Frame rate: 48 frames in 25.47 s =  1.88 fps (531 ms/frame)
+Total rate: 97 frames in 51.38 s =  1.89 fps (530 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+
+===> Black with color depths: 8, 16, 32 bpp
+===> Color depth: 8 bpp
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=8, monocle.epd.waveformMode=4}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 8
+FINE: Frame buffer rgba: 8/0,8/0,8/0,0/0
+FINE: Frame buffer grayscale: 1
+FINE: Native screen geometry: 1,472 px x 1,072 px x 8 bpp
+Frame rate: 48 frames in 19.34 s =  2.48 fps (403 ms/frame)
+Frame rate: 48 frames in 16.70 s =  2.87 fps (348 ms/frame)
+Total rate: 97 frames in 36.40 s =  2.66 fps (375 ms/frame)
+===> Color depth: 16 bpp
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=16, monocle.epd.waveformMode=4}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 16
+FINE: Frame buffer rgba: 5/11,6/5,5/0,0/0
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 16 bpp
+Frame rate: 48 frames in 17.38 s =  2.76 fps (362 ms/frame)
+Frame rate: 48 frames in 14.41 s =  3.33 fps (300 ms/frame)
+Total rate: 97 frames in 32.12 s =  3.02 fps (331 ms/frame)
+===> Color depth: 32 bpp
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=32, monocle.epd.waveformMode=4}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in  7.51 s =  6.39 fps (156 ms/frame)
+Frame rate: 48 frames in  7.08 s =  6.78 fps (147 ms/frame)
+Total rate: 97 frames in 14.67 s =  6.61 fps (151 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+
+===> Color depths and rotations: 0 (UR), 1 (CW), 2 (UD), 3 (CCW)
+===> Color depth: 8 bpp; Rotation: 0
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=8, monocle.epd.waveformMode=4, monocle.epd.rotate=0}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 8
+FINE: Frame buffer rgba: 8/0,8/0,8/0,0/0
+FINE: Frame buffer grayscale: 1
+FINE: Native screen geometry: 1,472 px x 1,072 px x 8 bpp
+Frame rate: 48 frames in 19.24 s =  2.50 fps (401 ms/frame)
+Frame rate: 48 frames in 16.40 s =  2.93 fps (342 ms/frame)
+Total rate: 97 frames in 35.98 s =  2.70 fps (371 ms/frame)
+===> Color depth: 8 bpp; Rotation: 1
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=8, monocle.epd.waveformMode=4, monocle.epd.rotate=1}
+FINE: Frame buffer geometry: 1,072 1,448 1,088 3,072 8
+FINE: Frame buffer rgba: 8/0,8/0,8/0,0/0
+FINE: Frame buffer grayscale: 1
+FINE: Native screen geometry: 1,088 px x 1,448 px x 8 bpp
+Frame rate: 48 frames in 19.17 s =  2.50 fps (399 ms/frame)
+Frame rate: 48 frames in 16.58 s =  2.90 fps (345 ms/frame)
+Total rate: 98 frames in 36.12 s =  2.71 fps (369 ms/frame)
+===> Color depth: 8 bpp; Rotation: 2
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=8, monocle.epd.waveformMode=4, monocle.epd.rotate=2}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 8
+FINE: Frame buffer rgba: 8/0,8/0,8/0,0/0
+FINE: Frame buffer grayscale: 1
+FINE: Native screen geometry: 1,472 px x 1,072 px x 8 bpp
+Frame rate: 48 frames in 19.30 s =  2.49 fps (402 ms/frame)
+Frame rate: 48 frames in 16.68 s =  2.88 fps (348 ms/frame)
+Total rate: 97 frames in 36.33 s =  2.67 fps (375 ms/frame)
+===> Color depth: 8 bpp; Rotation: 3
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=8, monocle.epd.waveformMode=4, monocle.epd.rotate=3}
+FINE: Frame buffer geometry: 1,072 1,448 1,088 3,072 8
+FINE: Frame buffer rgba: 8/0,8/0,8/0,0/0
+FINE: Frame buffer grayscale: 1
+FINE: Native screen geometry: 1,088 px x 1,448 px x 8 bpp
+Frame rate: 48 frames in 18.89 s =  2.54 fps (393 ms/frame)
+Frame rate: 48 frames in 16.15 s =  2.97 fps (336 ms/frame)
+Total rate: 97 frames in 35.38 s =  2.74 fps (365 ms/frame)
+===> Color depth: 16 bpp; Rotation: 0
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=16, monocle.epd.waveformMode=4, monocle.epd.rotate=0}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 16
+FINE: Frame buffer rgba: 5/11,6/5,5/0,0/0
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 16 bpp
+Frame rate: 48 frames in 17.58 s =  2.73 fps (366 ms/frame)
+Frame rate: 48 frames in 14.64 s =  3.28 fps (305 ms/frame)
+Total rate: 97 frames in 32.53 s =  2.98 fps (335 ms/frame)
+===> Color depth: 16 bpp; Rotation: 1
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=16, monocle.epd.waveformMode=4, monocle.epd.rotate=1}
+FINE: Frame buffer geometry: 1,072 1,448 1,088 3,072 16
+FINE: Frame buffer rgba: 5/11,6/5,5/0,0/0
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,088 px x 1,448 px x 16 bpp
+Frame rate: 48 frames in 17.25 s =  2.78 fps (359 ms/frame)
+Frame rate: 48 frames in 14.51 s =  3.31 fps (302 ms/frame)
+Total rate: 97 frames in 32.07 s =  3.02 fps (331 ms/frame)
+===> Color depth: 16 bpp; Rotation: 2
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=16, monocle.epd.waveformMode=4, monocle.epd.rotate=2}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 16
+FINE: Frame buffer rgba: 5/11,6/5,5/0,0/0
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 16 bpp
+Frame rate: 48 frames in 17.37 s =  2.76 fps (362 ms/frame)
+Frame rate: 48 frames in 14.51 s =  3.31 fps (302 ms/frame)
+Total rate: 97 frames in 32.21 s =  3.01 fps (332 ms/frame)
+===> Color depth: 16 bpp; Rotation: 3
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=16, monocle.epd.waveformMode=4, monocle.epd.rotate=3}
+FINE: Frame buffer geometry: 1,072 1,448 1,088 3,072 16
+FINE: Frame buffer rgba: 5/11,6/5,5/0,0/0
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,088 px x 1,448 px x 16 bpp
+Frame rate: 48 frames in 17.31 s =  2.77 fps (361 ms/frame)
+Frame rate: 48 frames in 14.54 s =  3.30 fps (303 ms/frame)
+Total rate: 97 frames in 32.16 s =  3.02 fps (332 ms/frame)
+===> Color depth: 32 bpp; Rotation: 0
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=32, monocle.epd.waveformMode=4, monocle.epd.rotate=0}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in  7.41 s =  6.48 fps (154 ms/frame)
+Frame rate: 48 frames in  6.92 s =  6.93 fps (144 ms/frame)
+Total rate: 97 frames in 14.39 s =  6.74 fps (148 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+===> Color depth: 32 bpp; Rotation: 1
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=32, monocle.epd.waveformMode=4, monocle.epd.rotate=1}
+FINE: Frame buffer geometry: 1,072 1,448 1,088 3,072 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,088 px x 1,448 px x 32 bpp
+FINE: Mapping frame buffer: 6,301,696 bytes
+Frame rate: 48 frames in  7.33 s =  6.55 fps (153 ms/frame)
+Frame rate: 48 frames in  6.76 s =  7.10 fps (141 ms/frame)
+Total rate: 97 frames in 14.14 s =  6.86 fps (146 ms/frame)
+FINE: Unmapping frame buffer: 6,301,696 bytes
+===> Color depth: 32 bpp; Rotation: 2
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=32, monocle.epd.waveformMode=4, monocle.epd.rotate=2}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in  7.32 s =  6.56 fps (152 ms/frame)
+Frame rate: 48 frames in  6.76 s =  7.10 fps (141 ms/frame)
+Total rate: 97 frames in 14.16 s =  6.85 fps (146 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+===> Color depth: 32 bpp; Rotation: 3
+FINE: EPD system properties: {monocle.epd.bitsPerPixel=32, monocle.epd.waveformMode=4, monocle.epd.rotate=3}
+FINE: Frame buffer geometry: 1,072 1,448 1,088 3,072 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,088 px x 1,448 px x 32 bpp
+FINE: Mapping frame buffer: 6,301,696 bytes
+Frame rate: 48 frames in  7.31 s =  6.57 fps (152 ms/frame)
+Frame rate: 48 frames in  6.68 s =  7.18 fps (139 ms/frame)
+Total rate: 97 frames in 14.05 s =  6.91 fps (145 ms/frame)
+FINE: Unmapping frame buffer: 6,301,696 bytes
+
+===> Inverted 8-bit grayscale
+FINE: EPD system properties: {monocle.epd.Y8Inverted=true, monocle.epd.bitsPerPixel=8, monocle.epd.waveformMode=4}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 8
+FINE: Frame buffer rgba: 8/0,8/0,8/0,0/0
+FINE: Frame buffer grayscale: 2
+FINE: Native screen geometry: 1,472 px x 1,072 px x 8 bpp
+Frame rate: 48 frames in 19.13 s =  2.51 fps (399 ms/frame)
+Frame rate: 48 frames in 16.16 s =  2.97 fps (337 ms/frame)
+Total rate: 97 frames in 35.64 s =  2.72 fps (367 ms/frame)
+
+===> No wait with color depths: 8, 16, 32 bpp
+===> Color depth: 8 bpp
+FINE: EPD system properties: {monocle.epd.noWait=true, monocle.epd.bitsPerPixel=8, monocle.epd.waveformMode=4}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 8
+FINE: Frame buffer rgba: 8/0,8/0,8/0,0/0
+FINE: Frame buffer grayscale: 1
+FINE: Native screen geometry: 1,472 px x 1,072 px x 8 bpp
+Frame rate: 48 frames in 19.20 s =  2.50 fps (400 ms/frame)
+Frame rate: 48 frames in 16.47 s =  2.91 fps (343 ms/frame)
+Total rate: 97 frames in 36.03 s =  2.69 fps (371 ms/frame)
+===> Color depth: 16 bpp
+FINE: EPD system properties: {monocle.epd.noWait=true, monocle.epd.bitsPerPixel=16, monocle.epd.waveformMode=4}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 16
+FINE: Frame buffer rgba: 5/11,6/5,5/0,0/0
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 16 bpp
+Frame rate: 48 frames in 17.52 s =  2.74 fps (365 ms/frame)
+Frame rate: 48 frames in 14.56 s =  3.30 fps (303 ms/frame)
+Total rate: 97 frames in 32.41 s =  2.99 fps (334 ms/frame)
+===> Color depth: 32 bpp
+FINE: EPD system properties: {monocle.epd.noWait=true, monocle.epd.bitsPerPixel=32, monocle.epd.waveformMode=4}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in  6.85 s =  7.01 fps (143 ms/frame)
+Frame rate: 48 frames in  6.81 s =  7.04 fps (142 ms/frame)
+Total rate: 97 frames in 13.75 s =  7.05 fps (142 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+
+===> Black with modes: 4 (A2), 1 (DU), 3 (GC4), 2 (GC16)
+===> Waveform mode: 4
+FINE: EPD system properties: {monocle.epd.waveformMode=4}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in  7.39 s =  6.50 fps (154 ms/frame)
+Frame rate: 48 frames in  6.80 s =  7.06 fps (142 ms/frame)
+Total rate: 97 frames in 14.26 s =  6.80 fps (147 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+===> Waveform mode: 1
+FINE: EPD system properties: {monocle.epd.waveformMode=1}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in 13.83 s =  3.47 fps (288 ms/frame)
+Frame rate: 48 frames in 13.39 s =  3.58 fps (279 ms/frame)
+Total rate: 97 frames in 27.52 s =  3.53 fps (284 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+===> Waveform mode: 3
+FINE: EPD system properties: {monocle.epd.waveformMode=3}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in 14.89 s =  3.22 fps (310 ms/frame)
+Frame rate: 48 frames in 14.52 s =  3.31 fps (302 ms/frame)
+Total rate: 97 frames in 29.71 s =  3.26 fps (306 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+===> Waveform mode: 2
+FINE: EPD system properties: {monocle.epd.waveformMode=2}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in 22.48 s =  2.14 fps (468 ms/frame)
+Frame rate: 48 frames in 22.43 s =  2.14 fps (467 ms/frame)
+Total rate: 97 frames in 45.38 s =  2.14 fps (468 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+
+===> 16 gray levels with modes: 4 (A2), 1 (DU), 3 (GC4), 2 (GC16)
+===> Waveform mode: 4
+FINE: EPD system properties: {monocle.epd.waveformMode=4}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in  7.49 s =  6.41 fps (156 ms/frame)
+Frame rate: 48 frames in  7.48 s =  6.42 fps (156 ms/frame)
+Total rate: 97 frames in 15.09 s =  6.43 fps (156 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+===> Waveform mode: 1
+FINE: EPD system properties: {monocle.epd.waveformMode=1}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in  8.14 s =  5.90 fps (170 ms/frame)
+Frame rate: 48 frames in  7.50 s =  6.40 fps (156 ms/frame)
+Total rate: 97 frames in 15.80 s =  6.14 fps (163 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+===> Waveform mode: 3
+FINE: EPD system properties: {monocle.epd.waveformMode=3}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in 14.19 s =  3.38 fps (296 ms/frame)
+Frame rate: 48 frames in 13.81 s =  3.48 fps (288 ms/frame)
+Total rate: 97 frames in 28.31 s =  3.43 fps (292 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+===> Waveform mode: 2
+FINE: EPD system properties: {monocle.epd.waveformMode=2}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in 21.25 s =  2.26 fps (443 ms/frame)
+Frame rate: 48 frames in 21.26 s =  2.26 fps (443 ms/frame)
+Total rate: 97 frames in 42.99 s =  2.26 fps (443 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+
+===> Automatic waveform selection with gray levels: 1, 2, 4, 16
+===> Gray levels: 1
+FINE: EPD system properties: {}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in 13.81 s =  3.48 fps (288 ms/frame)
+Frame rate: 48 frames in 13.39 s =  3.58 fps (279 ms/frame)
+Total rate: 97 frames in 27.49 s =  3.53 fps (283 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+===> Gray levels: 2
+FINE: EPD system properties: {}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in  7.09 s =  6.77 fps (148 ms/frame)
+Frame rate: 48 frames in  7.01 s =  6.85 fps (146 ms/frame)
+Total rate: 97 frames in 14.16 s =  6.85 fps (146 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+===> Gray levels: 4
+FINE: EPD system properties: {}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in 12.12 s =  3.96 fps (252 ms/frame)
+Frame rate: 48 frames in 11.72 s =  4.09 fps (244 ms/frame)
+Total rate: 97 frames in 24.13 s =  4.02 fps (249 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+===> Gray levels: 16
+FINE: EPD system properties: {}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in 21.31 s =  2.25 fps (444 ms/frame)
+Frame rate: 48 frames in 21.30 s =  2.25 fps (444 ms/frame)
+Total rate: 97 frames in 42.90 s =  2.26 fps (442 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+
+===> Enable inversion update flag
+FINE: EPD system properties: {monocle.epd.enableInversion=true, monocle.epd.waveformMode=4}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in  7.72 s =  6.21 fps (161 ms/frame)
+Frame rate: 48 frames in  7.73 s =  6.21 fps (161 ms/frame)
+Total rate: 97 frames in 15.51 s =  6.26 fps (160 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+
+===> Force monochrome update flag with gray levels: 4, 16
+===> Gray level: 4
+FINE: EPD system properties: {monocle.epd.waveformMode=4, monocle.epd.forceMonochrome=true}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in  6.79 s =  7.07 fps (141 ms/frame)
+Frame rate: 48 frames in  6.36 s =  7.54 fps (133 ms/frame)
+Total rate: 97 frames in 13.25 s =  7.32 fps (137 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+===> Gray level: 16
+FINE: EPD system properties: {monocle.epd.waveformMode=4, monocle.epd.forceMonochrome=true}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in  7.40 s =  6.49 fps (154 ms/frame)
+Frame rate: 48 frames in  7.34 s =  6.54 fps (153 ms/frame)
+Total rate: 97 frames in 14.82 s =  6.55 fps (153 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+
+===> Frame rate using move pattern with wait (16 times)
+FINE: EPD system properties: {monocle.epd.waveformMode=4}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in  7.37 s =  6.51 fps (154 ms/frame)
+Frame rate: 48 frames in  6.68 s =  7.18 fps (139 ms/frame)
+Frame rate: 48 frames in  6.68 s =  7.19 fps (139 ms/frame)
+Frame rate: 48 frames in  6.68 s =  7.18 fps (139 ms/frame)
+Frame rate: 48 frames in  6.68 s =  7.19 fps (139 ms/frame)
+Frame rate: 48 frames in  6.69 s =  7.18 fps (139 ms/frame)
+Frame rate: 48 frames in  6.69 s =  7.17 fps (139 ms/frame)
+Frame rate: 48 frames in  6.71 s =  7.16 fps (140 ms/frame)
+Frame rate: 48 frames in  6.68 s =  7.19 fps (139 ms/frame)
+Frame rate: 48 frames in  6.68 s =  7.18 fps (139 ms/frame)
+Frame rate: 48 frames in  6.69 s =  7.18 fps (139 ms/frame)
+Frame rate: 48 frames in  6.68 s =  7.18 fps (139 ms/frame)
+Frame rate: 48 frames in  6.69 s =  7.17 fps (139 ms/frame)
+Frame rate: 48 frames in  6.69 s =  7.18 fps (139 ms/frame)
+Frame rate: 48 frames in  6.70 s =  7.17 fps (140 ms/frame)
+Frame rate: 48 frames in  6.69 s =  7.18 fps (139 ms/frame)
+Total rate: 769 frames in 107.74 s =  7.14 fps (140 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
+
+===> Frame rate using sweep pattern and no wait (16 times)
+FINE: EPD system properties: {monocle.epd.noWait=true, monocle.epd.waveformMode=4}
+FINE: Frame buffer geometry: 1,448 1,072 1,472 2,304 32
+FINE: Frame buffer rgba: 8/16,8/8,8/0,8/24
+FINE: Frame buffer grayscale: 0
+FINE: Native screen geometry: 1,472 px x 1,072 px x 32 bpp
+FINE: Mapping frame buffer: 6,311,936 bytes
+Frame rate: 48 frames in  7.18 s =  6.68 fps (150 ms/frame)
+Frame rate: 48 frames in  7.13 s =  6.73 fps (149 ms/frame)
+Frame rate: 48 frames in  7.15 s =  6.72 fps (149 ms/frame)
+Frame rate: 48 frames in  7.12 s =  6.74 fps (148 ms/frame)
+Frame rate: 48 frames in  7.10 s =  6.76 fps (148 ms/frame)
+Frame rate: 48 frames in  7.12 s =  6.74 fps (148 ms/frame)
+Frame rate: 48 frames in  7.12 s =  6.74 fps (148 ms/frame)
+Frame rate: 48 frames in  7.11 s =  6.75 fps (148 ms/frame)
+Frame rate: 48 frames in  7.14 s =  6.72 fps (149 ms/frame)
+Frame rate: 48 frames in  7.13 s =  6.73 fps (149 ms/frame)
+Frame rate: 48 frames in  7.09 s =  6.77 fps (148 ms/frame)
+Frame rate: 48 frames in  7.12 s =  6.75 fps (148 ms/frame)
+Frame rate: 48 frames in  7.05 s =  6.81 fps (147 ms/frame)
+Frame rate: 48 frames in  7.09 s =  6.77 fps (148 ms/frame)
+Frame rate: 48 frames in  7.15 s =  6.71 fps (149 ms/frame)
+Frame rate: 48 frames in  7.11 s =  6.75 fps (148 ms/frame)
+Total rate: 769 frames in 114.00 s =  6.75 fps (148 ms/frame)
+FINE: Unmapping frame buffer: 6,311,936 bytes
