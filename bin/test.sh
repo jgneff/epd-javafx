@@ -4,7 +4,7 @@ trap exit INT TERM
 set -o errexit
 
 # JDK and JavaFX SDK
-JAVA_HOME=$HOME/opt/jdk-13.0.1+9
+JAVA_HOME=$HOME/opt/jdk-14+36
 JAVAFX_LIB=$HOME/lib/armv6hf-sdk/lib
 
 rootdir=$HOME/src/epd-javafx
