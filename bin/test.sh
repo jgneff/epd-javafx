@@ -3,15 +3,25 @@
 trap exit INT TERM
 set -o errexit
 
+# Checks that this script was run with sudo
+if [ -z "$SUDO_USER" ]; then
+    printf "Error: This script must run as root with sudo.\n"
+    exit 1
+fi
+
+# Sets HOME to the home directory of the user who invoked sudo
+HOME=/home/$SUDO_USER
+
 # JDK and JavaFX SDK
-JAVA_HOME=$HOME/opt/jdk-14+36
+JAVA_HOME=$HOME/opt/jdk-14.0.1+7
 JAVAFX_LIB=$HOME/lib/armv6hf-sdk/lib
 
-rootdir=$HOME/src/epd-javafx
-argfile=$rootdir/bin/epdargs.conf
-jarfile=$rootdir/dist/epd-javafx.jar
-logfile=$rootdir/conf/logging.properties
+apphome=$HOME/src/epd-javafx
+argfile=$apphome/bin/epdargs.conf
+jarfile=$apphome/dist/epd-javafx.jar
+logfile=$apphome/conf/logging.properties
 
+$JAVA_HOME/bin/java -version
 cmd="$JAVA_HOME/bin/java @$argfile --module-path=$JAVAFX_LIB \
     -Djava.util.logging.config.file=$logfile"
 
@@ -33,7 +43,7 @@ printf "\n===> Color depths and rotations: 0 (UR), 1 (CW), 2 (UD), 3 (CCW)\n"
 for n in 8 16 32; do
     for rot in 0 1 2 3; do
         printf "===> Color depth: $n bpp; Rotation: $rot\n"
-        $cmd @$rootdir/bin/rotate${rot}.conf -Dmonocle.epd.rotate=$rot \
+        $cmd @$apphome/bin/rotate${rot}.conf -Dmonocle.epd.rotate=$rot \
             -Dmonocle.epd.bitsPerPixel=$n -Dmonocle.epd.waveformMode=4 \
             -jar $jarfile --pattern=1
     done
