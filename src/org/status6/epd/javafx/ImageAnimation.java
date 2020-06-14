@@ -20,6 +20,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.io.IOException;
+import java.nio.IntBuffer;
 import java.util.ArrayList;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.PixelFormat;
@@ -37,14 +38,15 @@ class ImageAnimation extends FiniteAnimation {
 
     private static final String FORMAT_NAME = "gif";
 
-    private final ArrayList<BufferedImage> awtList;
+    private final ArrayList<BufferedImage> frames;
     private final ImageView view;
     private final boolean patrol;
-    private final int frames;
+    private final int count;
     private final int width;
     private final int height;
-    private final BufferedImage tmpImage;
+    private final BufferedImage awtImage;
     private final Graphics2D graphics;
+    private final PixelFormat<IntBuffer> format;
     private final WritableImage jfxImage1;
     private final WritableImage jfxImage2;
 
@@ -94,30 +96,31 @@ class ImageAnimation extends FiniteAnimation {
      * @throws IOException if an error occurs reading the image file
      */
     ImageAnimation(ImageView view, String filename, boolean patrol) throws IOException {
-        awtList = getFrames(filename);
+        frames = getFrames(filename);
         this.view = view;
         this.patrol = patrol;
-        frames = awtList.size();
-        BufferedImage first = awtList.get(0);
+        count = frames.size();
+        BufferedImage first = frames.get(0);
         width = first.getWidth();
         height = first.getHeight();
-        for (BufferedImage image : awtList) {
+        for (BufferedImage image : frames) {
             if (image.getWidth() != width || image.getHeight() != height) {
                 throw new IllegalArgumentException("GIF image must be a coalesced animation");
             }
         }
 
         /*
-         * The fastest image conversion draws to an AWT image of type
-         * BufferedImage.TYPE_INT_ARGB and writes to a JavaFX image specifying
-         * the pixel format returned by PixelFormat.getIntArgbPreInstance()
-         * (PixelFormat.Type.INT_ARGB_PRE), and seems to work even for images
-         * with translucent transparency. In any case, the pixels in GIF images
-         * are either fully opaque or fully transparent so their colors are the
-         * same when premultiplied with alpha.
+         * The fastest image conversion draws the source AWT image into an
+         * intermediate AWT image of type INT_ARGB; then gets the intermediate
+         * raster data and writes it to the target JavaFX image as pixels in the
+         * INT_ARGB_PRE format (see https://github.com/jgneff/tofximage).
+         * Because pixels in GIF images are either fully opaque or fully
+         * transparent, their colors are the same whether or not premultiplied
+         * with alpha.
          */
-        tmpImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
-        graphics = tmpImage.createGraphics();
+        awtImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        graphics = awtImage.createGraphics();
+        format = PixelFormat.getIntArgbPreInstance();
 
         /*
          * Use double buffering on the JavaFX Application Thread to avoid
@@ -140,8 +143,8 @@ class ImageAnimation extends FiniteAnimation {
         if (next < 0) {
             next = 1;
             reverse = false;
-        } else if (next == frames) {
-            next = frames - 2;
+        } else if (next == count) {
+            next = count - 2;
             reverse = true;
         }
         return next;
@@ -154,7 +157,7 @@ class ImageAnimation extends FiniteAnimation {
      */
     private int nextLoopCycle() {
         int next = index + 1;
-        if (next == frames) {
+        if (next == count) {
             next = 0;
         }
         return next;
@@ -162,15 +165,14 @@ class ImageAnimation extends FiniteAnimation {
 
     @Override
     int getNumFrames() {
-        return awtList.size();
+        return frames.size();
     }
 
     @Override
     public void handle(long now) {
-        graphics.drawImage(awtList.get(index), 0, 0, null);
-        int[] data = ((DataBufferInt) tmpImage.getRaster().getDataBuffer()).getData();
-        jfxImage.getPixelWriter().setPixels(0, 0, width, height,
-                PixelFormat.getIntArgbPreInstance(), data, 0, width);
+        graphics.drawImage(frames.get(index), 0, 0, null);  // Draws into awtImage
+        int[] data = ((DataBufferInt) awtImage.getRaster().getDataBuffer()).getData();
+        jfxImage.getPixelWriter().setPixels(0, 0, width, height, format, data, 0, width);
         view.setImage(jfxImage);
         jfxImage = jfxImage == jfxImage2 ? jfxImage1 : jfxImage2;
         index = patrol ? nextPatrolCycle() : nextLoopCycle();
