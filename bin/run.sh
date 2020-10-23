@@ -11,7 +11,7 @@ fi
 HOME=/home/$SUDO_USER
 
 # JDK and JavaFX SDK
-JAVA_HOME=$HOME/opt/jdk-14.0.1+7
+JAVA_HOME=$HOME/opt/jdk-15+36-jre
 JAVAFX_LIB=$HOME/lib/armv6hf-sdk/lib
 
 apphome=$HOME/src/epd-javafx
@@ -19,7 +19,7 @@ argfile=$apphome/bin/epdargs.conf
 jarfile=$apphome/dist/epd-javafx.jar
 logfile=$apphome/conf/logging.properties
 
-$JAVA_HOME/bin/java -version
-$JAVA_HOME/bin/java @$argfile --module-path=$JAVAFX_LIB \
+$JAVA_HOME/bin/java --show-version \
+    @$argfile --module-path=$JAVAFX_LIB \
     -Djava.util.logging.config.file=$logfile \
     -Dmonocle.epd.waveformMode=4 -jar $jarfile $@

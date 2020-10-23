@@ -13,7 +13,7 @@ fi
 HOME=/home/$SUDO_USER
 
 # JDK and JavaFX SDK
-JAVA_HOME=$HOME/opt/jdk-14.0.1+7
+JAVA_HOME=$HOME/opt/jdk-15+36-jre
 JAVAFX_LIB=$HOME/lib/armv6hf-sdk/lib
 
 apphome=$HOME/src/epd-javafx
